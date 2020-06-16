@@ -12,7 +12,7 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 4. Update & upgrade system up-to-date, check pamac settings, and use pamac as much as possible(to make sure the system is up-to-date(Manjaro: rolling release)), if you use pacman and you don’t know well about Manjaro, use -Syu option!
 5. Backup your Manjaro account’s ID, PW, and root PW 
 6. (Disable user feedbacks for privacy) 
-7. gufw: make sure gufw auto-start on startup 
+7. gufw: make sure gufw auto-start on startup[1]
 8. time: Manjaro uses UTC, Windows uses RTC. Make Windows use UTC and hit the synchronize button of Windows. 
 9. Firefox settings: (refer to privacytools.io, Youtube videos for privacy +) restore your bookmarks 
 10. Libreoffice writer: set your preferences(+ disable autocorrect-word completion and delete all the history for potential privacy threat)
@@ -25,6 +25,8 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 17. brightness & night light(5000K~6000K might be your sweet spot) 
 18. appearances: wallpapers, resolution, font size 19. Go through your KDE system settings 
 19. Initial Setup is Done. You can change settings whenever you want!
+
+[1] (sudo) systemctl enable ufw will create the symlink
 
 *Further Helps Search: 
 Things to do after installing Manjaro on Google, Youtube, ...
