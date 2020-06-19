@@ -9,8 +9,7 @@ Migrating from other Operating Systems is quite a chore for setting up details. 
 Each .md file is itself self-explanatory guide.[1]
 
 Contents: 
-1. License - CC0 1.0 Universal
-2. README.md - overall introduction
-3. Install Manjaro Linux KDE and Set it Thoroughly
+1. README.md - overall introduction
+2. Install Manjaro Linux KDE and Set it Thoroughly
 
 [1] for contributors: please make all the guide self-explanatory. If needed, you could use references
