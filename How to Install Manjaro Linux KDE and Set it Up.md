@@ -25,9 +25,10 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 17. brightness & night light(5000K~6000K might be your sweet spot) 
 18. appearances: wallpapers, resolution, font size 19. Go through your KDE system settings 
 19. Initial Setup is Done. You can change settings whenever you want!
+appendix 1. how to use different keybind: a) backup ~/.Xmodmap b) edit ~/.Xmodmap(use xev to figure out the keycodes) c) check ~/.xinitrc to ensure that X11 starts with the changed .Xmodmap(cf. usermodmap, sysmodmap, if [ -f "$usermodmap" ]; then xmodmap "$usermodmap" fi) 
+
 
 [1] (sudo) systemctl enable ufw will create the symlink
-
 *Further Helps Search: 
 Things to do after installing Manjaro on Google, Youtube, ...
 Privacy Settings: privacytools.io, Youtube videos, ...
