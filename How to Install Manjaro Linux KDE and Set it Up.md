@@ -32,6 +32,8 @@ appendix 2. tldr, fortune would help a lot.
 
 appendix 3. If you are going to use Joplin(open-source note-taking app), check https://github.com/laurent22/joplin and execute Joplin_install_and_update.sh
 
+appendix 4. customize clipboard example: right-click clipboard -> configure configure clipboard -> uncheck Save clipboard contents on exit, check Prevent empty clipboard/Ignore images/Ignore selection and change Clipboard history size to 3.
+
 [2] 
 \# Manual Partitioning
 EFI, swap, root, home
