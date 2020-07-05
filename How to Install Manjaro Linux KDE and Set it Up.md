@@ -14,7 +14,7 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 6. (Disable user feedbacks for privacy) 
 7. gufw: make sure gufw auto-start on startup[7]
 8. time: Manjaro uses UTC, Windows uses RTC. Make Windows use UTC and hit the synchronize button of Windows. 
-9. Firefox settings: (refer to privacytools.io, Youtube videos for privacy +) restore your bookmarks 
+9. Firefox settings: (refer to privacytools.io, Youtube videos for privacy +) restore your bookmarks [9]
 10. Libreoffice writer: set your preferences(+ disable autocorrect-word completion and delete all the history for potential privacy threat)
 11. set uim for multilanguage input support. uim byeoru works well for Korean input. And install fonts.[11]
 12. keyboard shortcuts: remove the unnecessary 
@@ -44,6 +44,25 @@ home: ext4, /home
 
 [7] 
 (sudo) systemctl enable ufw will create the symlink
+
+[9]
+
+\# Preferences
+
+\# about:config
+network.security.esni.enabled -> true
+network.trr.bootstrapAddress -> 1.1.1.1
+browser.urlbar.speculativeConnect.enabled -> false
+privacy.resistFingerprinting -> true
+privacy.firstparty.isolate -> true
+media.peerconnection.enabled -> false
+
+\# plugins
+uBlock Origin
+HTTPS Everywhere
+Cookie Autodelete
+Decentraleyes
+...
 
 [11]
 for Hangul(Korean) input:
@@ -75,7 +94,9 @@ adobe-source-han-sans-kr-fonts
 adobe-source-han-serif-kr-fonts
 
 [16] 
+
 \# install tlp, and then systemctl enable tlp --now (if tlp's version is 1.2.2 or lower, tlp needs tlp-sleep.service also.)
+
 \# (sudo) vim /etc/systemd/sleep.conf
 AllowHibernation=no
 AllowSuspendThenHibernate=no
