@@ -26,8 +26,10 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 18. Go through your KDE system settings[18]
 19. Initial Setup is Done. You can change settings whenever you want!
 
-appendix 1. how to use different keybind: a) backup ~/.Xmodmap b) edit ~/.Xmodmap(use xev to figure out the keycodes) c) check ~/.xinitrc to ensure that X11 starts with the changed .Xmodmap(cf. usermodmap, sysmodmap, if [ -f "$usermodmap" ]; then xmodmap "$usermodmap" fi) 
+appendix 1. how to use different keybind: a) xmodmap -pke > ~/.Xmodmap b) edit ~/.Xmodmap(use xev to figure out the keycodes) c) check ~/.xinitrc to ensure that X11 starts with the changed .Xmodmap(cf. usermodmap, sysmodmap, if [ -f "$usermodmap" ]; then xmodmap "$usermodmap" fi) 
+
 appendix 2. tldr, fortune would help a lot.
+
 appendix 3. If you are going to use Joplin(open-source note-taking app), check https://github.com/laurent22/joplin and execute Joplin_install_and_update.sh
 
 [2] 
@@ -37,6 +39,7 @@ EFI: 512MiB, FAT32, /boot/efi, boot
 swap: 8602MiB(as you want), linuxswap, swap
 root: 65536MiB, ext4, /, root
 home: ext4, /home
+
 \# after installation, before reboot, type efibootmgr command into the terminal and check BootOrder. If not correct, go into BIOS settings and fix it.
 
 [7] 
@@ -44,7 +47,9 @@ home: ext4, /home
 
 [11]
 for Hangul(Korean) input:
+
 \# download uim
+
 \# $ vim ~/.xprofile
 export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim
@@ -54,6 +59,7 @@ xmodmap -e 'remove mod1 = Alt_R'
 xmodmap -e 'keycode 108 = Hangul'
 xmodmap -e 'remove control = Control_R'
 xmodmap -e 'keycode 105 = Hangul_Hanja'
+
 \# uim-pref-gtk
 check Specify default IM, Default input method&Enabled input methods -> leave only Byeoru, "Byeoru" on each.
 uncheck Enable IM switching by hotkey
@@ -62,6 +68,7 @@ in Byeoru key bindings 1 menu,
 [Byeoru] on "hangul"
 [Byeoru] off "hangul"
 [Byeoru] convert Hangul to Chinese characters "hangul-hanja"
+
 \# install fonts
 noto-fonts-cjk
 adobe-source-han-sans-kr-fonts
