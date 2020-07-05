@@ -31,21 +31,21 @@ appendix 2. tldr, fortune would help a lot.
 appendix 3. If you are going to use Joplin(open-source note-taking app), check https://github.com/laurent22/joplin and execute Joplin_install_and_update.sh
 
 [2] 
-# Manual Partitioning
+\# Manual Partitioning
 EFI, swap, root, home
 EFI: 512MiB, FAT32, /boot/efi, boot
 swap: 8602MiB(as you want), linuxswap, swap
 root: 65536MiB, ext4, /, root
 home: ext4, /home
-# after installation, before reboot, type efibootmgr command into the terminal and check BootOrder. If not correct, go into BIOS settings and fix it.
+\# after installation, before reboot, type efibootmgr command into the terminal and check BootOrder. If not correct, go into BIOS settings and fix it.
 
 [7] 
 (sudo) systemctl enable ufw will create the symlink
 
 [11]
 for Hangul(Korean) input:
-# download uim
-# $ vim ~/.xprofile
+\# download uim
+\# $ vim ~/.xprofile
 export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim
 uim-xim &
@@ -54,7 +54,7 @@ xmodmap -e 'remove mod1 = Alt_R'
 xmodmap -e 'keycode 108 = Hangul'
 xmodmap -e 'remove control = Control_R'
 xmodmap -e 'keycode 105 = Hangul_Hanja'
-# uim-pref-gtk
+\# uim-pref-gtk
 check Specify default IM, Default input method&Enabled input methods -> leave only Byeoru, "Byeoru" on each.
 uncheck Enable IM switching by hotkey
 uncheck Enable input method toggle by hot keys
@@ -62,14 +62,14 @@ in Byeoru key bindings 1 menu,
 [Byeoru] on "hangul"
 [Byeoru] off "hangul"
 [Byeoru] convert Hangul to Chinese characters "hangul-hanja"
-# install fonts
+\# install fonts
 noto-fonts-cjk
 adobe-source-han-sans-kr-fonts
 adobe-source-han-serif-kr-fonts
 
 [16] 
-# install tlp, and then systemctl enable tlp --now (if tlp's version is 1.2.2 or lower, tlp needs tlp-sleep.service also.)
-# (sudo) vim /etc/systemd/sleep.conf
+\# install tlp, and then systemctl enable tlp --now (if tlp's version is 1.2.2 or lower, tlp needs tlp-sleep.service also.)
+\# (sudo) vim /etc/systemd/sleep.conf
 AllowHibernation=no
 AllowSuspendThenHibernate=no
 
