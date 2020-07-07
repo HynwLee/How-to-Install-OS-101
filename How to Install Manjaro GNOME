@@ -32,7 +32,12 @@ appendix 1. how to use different keybind:
 a) xmodmap -pke > ~/.Xmodmap b) edit ~/.Xmodmap(use xev to figure out the keycodes) c) check ~/.xinitrc to ensure that X11 starts with the changed .Xmodmap(cf. usermodmap, sysmodmap, if [ -f "$usermodmap" ]; then xmodmap "$usermodmap" fi) 
 
 if these don't work(my GNOME didn't work), then:
-edit /usr/share/X11/xkb/keycodes/evdev instead of ~/.Xmodmap 
+edit 
+    /usr/share/X11/xkb/symbols/keypad
+    /usr/share/X11/xkb/symbols/us
+    /usr/share/X11/xkb/symbols/kr
+    ...
+instead of ~/.Xmodmap 
 
 appendix 2. tldr, fortune would help a lot.
 
