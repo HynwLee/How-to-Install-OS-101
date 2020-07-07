@@ -89,6 +89,7 @@ uim-xim &
 export XMODIFIERS=@im=uim
 \#\# below are useless if GNOME doesn't use xmodmap. Then, open dconf editor and go into
 \#\# /org/gnome/desktop/input-sources/xkb-options. Replace Custom value with ['korean:ralt_hanja']
+\#\# Finally, uim-pref-gtk -> Byeoru key bindings 1 -> [Byeoru] on / off -> add "hangul-hanja" and for [Byeoru] convert Hangul to Chinese characters, use "<Shift>hangul-hanja" instead.
 xmodmap -e 'remove mod1 = Alt_R'
 xmodmap -e 'keycode 108 = Hangul'
 xmodmap -e 'remove control = Control_R'
