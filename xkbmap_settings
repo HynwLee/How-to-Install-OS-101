@@ -1,0 +1,5 @@
+rules:      evdev
+model:      pc105
+layout:     kr,us
+variant:    kr104,
+options:    lv3:ralt_switch
