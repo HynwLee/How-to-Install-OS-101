@@ -148,8 +148,8 @@ AllowSuspendThenHibernate=no
 [18]
 Workspace Behavior -> Activities -> Privacy: Keep history: "as you want"
 
-
-**Further Helps Search: 
+**Further Helps Search:
+Debian Wiki: DontBreakDebian
 Things to do after installing Debian on Google, Youtube, ...
 Privacy Settings: privacytools.io, Youtube videos, ...**
 
