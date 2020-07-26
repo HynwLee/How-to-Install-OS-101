@@ -24,11 +24,11 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 13. (g)ufw: make sure (g)ufw auto-start on startup[13]
 14. install VLC
 15. time: Debian uses UTC, Windows uses RTC. Make Windows use UTC and hit the synchronize button of Windows. 
-16. Firefox settings: (refer to privacytools.io, Youtube videos for privacy +) restore your bookmarks [16]
+16. Firefox settings: (for privacy and security, search on the internet!) restore your bookmarks [16]
 17. Libreoffice writer: set your preferences(+ disable autocorrect-word completion and delete all the history for potential privacy threat)
 18. set uim for multilanguage input support. uim byeoru works well for Korean input. And install fonts.[18]
 12. keyboard shortcuts: remove the unnecessary 
-13. vim settings: refer to Youtube video like: add_ide_features_to_vim, etc.
+13. vim settings: customize .vimrc and use great plugins!
 14. Encrypted DNS Settings 
 15. Restore files from your backup storage[15]
 16. battery: laptop lid/power button actions/screen light-out/suspend: sleep, shutdown, disable hibernation[16]
@@ -47,10 +47,10 @@ ExecStart=/usr/sbin/rfkill block bluetooth
 WantedBy=multi-user.target
 -> sudo systemctl enable disablebluetooth.service
 21. add terminal shortcut: Settings -> Devices -> Keyboard -> Command gnome-terminal, Shortcut Ctrl + Alt + T (e.g.)
-22. 3rd-party programs: use programs in the official repository as much as possible, and if you can't avoid it, then at least isolate in your home directory.
+22. 3rd-party programs: use programs in the official repository as much as possible, and if you can't avoid it, then at least isolate in your home directory. For stability, use programs in the official repositories. If you need newer ones or missing ones that you can't get from there, consider: 1) Debian Backports 2) Flatpaks 3) AppImages 4) isolate 3rd-party programs in your home directory
 23. (Install 7-zip, veracrypt, ...) 
 24. Remove bloats: I mean, GNOME games.
-25. Initial Setup is Done. You can change settings whenever you want!
+25. Initial Setup is Done. You can change settings whenever you want! For stability, search on the internet for the latest information.
 
 appendix 1. how to use different keybind: 
 a) xmodmap -pke > ~/.Xmodmap b) edit ~/.Xmodmap(use xev to figure out the keycodes) c) check ~/.xinitrc to ensure that X11 starts with the changed .Xmodmap(cf. usermodmap, sysmodmap, if [ -f "$usermodmap" ]; then xmodmap "$usermodmap" fi) 
@@ -65,12 +65,12 @@ instead of ~/.Xmodmap
 
 appendix 2. tldr, fortune would help a lot.
 
-appendix 3. If you are going to use Joplin(open-source note-taking app), check https://github.com/laurent22/joplin and execute Joplin_install_and_update.sh -> ./Joplin.AppImage --appimage-extract -> replace the included chrome-sandbox with a symlink to computer's chrome-sandbox(/usr/lib/chromium/chrome-sandbox) -> download appimagetool and repack Joplin by ARCH=x86_64 ./appimagetool-x86_64.AppImage ~/directory
+appendix 3. If you are going to use Joplin(open-source note-taking app): ./Joplin.AppImage --appimage-extract -> replace the included chrome-sandbox with a symlink to computer's chrome-sandbox(/usr/lib/chromium/chrome-sandbox) -> download appimagetool and repack Joplin by ARCH=x86_64 ./appimagetool-x86_64.AppImage ~/directory
 
 appendix 4. customize clipboard example: right-click clipboard -> configure clipboard -> uncheck Save clipboard contents on exit, check Prevent empty clipboard/Ignore images/Ignore selection and change Clipboard history size to 5.
 
 [3] 
-\# Manual Partitioning
+\# Manual Partitioning Example
 EFI, swap, root, home
 EFI: 537.9MB, ESP, B
 root: 64GB, ext4, /, root
@@ -99,6 +99,8 @@ HTTPS Everywhere
 Cookie Autodelete
 Decentraleyes
 ...
+
+Search on the Internet!
 
 [18]
 for Hangul(Korean) input:
@@ -147,9 +149,4 @@ AllowSuspendThenHibernate=no
 
 [18]
 Workspace Behavior -> Activities -> Privacy: Keep history: "as you want"
-
-**Further Helps Search:
-Debian Wiki: DontBreakDebian
-Things to do after installing Debian on Google, Youtube, ...
-Privacy Settings: privacytools.io, Youtube videos, ...**
 
