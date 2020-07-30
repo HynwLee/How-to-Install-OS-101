@@ -19,7 +19,7 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 8. sudo apt install build-essential dkms linux-headers-$(uname --kernel-release)
 9. sudo apt install synaptic
 10. $ ps -e | grep -Ei "x|way" and if Debian is using Wayland, then logout and select System X11 Default(Wayland doesn't support Synaptic Package Manager at the time of writing this)
-11. (Disable user feedbacks for privacy) 
+11. (Disable user feedbacks for privacy) [11]
 12. install Intel/AMD microcode
 13. (g)ufw: make sure (g)ufw auto-start on startup[13]
 14. install VLC
@@ -27,15 +27,15 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 16. Firefox settings: (for privacy and security, search on the internet!) restore your bookmarks [16]
 17. Libreoffice writer: set your preferences(+ disable autocorrect-word completion and delete all the history for potential privacy threat)
 18. set uim for multilanguage input support. uim byeoru works well for Korean input. And install fonts.[18]
-12. keyboard shortcuts: remove the unnecessary 
-13. vim settings: customize .vimrc and use great plugins!
-14. Encrypted DNS Settings 
-15. Restore files from your backup storage[15]
-16. battery: laptop lid/power button actions/screen light-out/suspend: sleep, shutdown, disable hibernation[16]
-17. brightness & night light(5000K~6000K might be your sweet spot): 00:00 to 23:59 for always -> dconf-editor -> /org/gnome/settings-daemon/plugins/color/night-light-temperature -> change Custom value
-18. Go through your GNOME system settings[18]
-19. Install fd, rg and add alias fd=fdfind in .bashrc file
-20. To disable bluetooth on startup, install rfkill -> create /lib/systemd/system/disablebluetooth.service -> 
+19. keyboard shortcuts: remove the unnecessary 
+20. vim settings: customize .vimrc and use great plugins!
+21. Encrypted DNS Settings 
+22. Restore files from your backup storage[22]
+23. battery: laptop lid/power button actions/screen light-out/suspend: sleep, shutdown, disable hibernation[23]
+24. brightness & night light(5000K~6000K might be your sweet spot): 00:00 to 23:59 for always -> dconf-editor -> /org/gnome/settings-daemon/plugins/color/night-light-temperature -> change Custom value
+25. Go through your GNOME system settings[25]
+26. Install fd, rg and add alias fd=fdfind in .bashrc file, add welcoming messages[26]
+27. To disable bluetooth on startup, install rfkill -> create /lib/systemd/system/disablebluetooth.service -> 
 [Unit]
 Description=Disable Bluetooth
 
@@ -46,11 +46,11 @@ ExecStart=/usr/sbin/rfkill block bluetooth
 [Install]
 WantedBy=multi-user.target
 -> sudo systemctl enable disablebluetooth.service
-21. add terminal shortcut: Settings -> Devices -> Keyboard -> Command gnome-terminal, Shortcut Ctrl + Alt + T (e.g.)
-22. 3rd-party programs: use programs in the official repository as much as possible, and if you can't avoid it, then at least isolate in your home directory. For stability, use programs in the official repositories. If you need newer ones or missing ones that you can't get from there, consider: 1) Debian Backports 2) Flatpaks 3) AppImages 4) isolate 3rd-party programs in your home directory
-23. (Install 7-zip, veracrypt, ...) 
-24. Remove bloats: I mean, GNOME games.
-25. Initial Setup is Done. You can change settings whenever you want! For stability, search on the internet for the latest information.
+28. add terminal shortcut: Settings -> Devices -> Keyboard -> Command gnome-terminal, Shortcut Ctrl + Alt + T (e.g.)
+29. 3rd-party programs: use programs in the official repository as much as possible, and if you can't avoid it, then at least isolate in your home directory. For stability, use programs in the official repositories. If you need newer ones or missing ones that you can't get from there, consider: 1) Debian Backports 2) Flatpaks 3) AppImages 4) isolate 3rd-party programs in your home directory
+30. (Install 7-zip, veracrypt, ...) 
+31. Remove bloats: I mean, GNOME games.
+32. Initial Setup is Done. You can change settings whenever you want! For stability, search on the internet for the latest information.
 
 appendix 1. how to use different keybind: 
 a) xmodmap -pke > ~/.Xmodmap b) edit ~/.Xmodmap(use xev to figure out the keycodes) c) check ~/.xinitrc to ensure that X11 starts with the changed .Xmodmap(cf. usermodmap, sysmodmap, if [ -f "$usermodmap" ]; then xmodmap "$usermodmap" fi) 
@@ -78,6 +78,9 @@ swap: 8.4GB(as you want), linuxswap, swap
 home: All of the left, ext4, /home
 
 \# after installation, go into BIOS settings and fix it.
+
+[11]
+Workspace Behavior -> Activities -> Privacy: Keep history: "as you want"
 
 [13] 
 (sudo) systemctl enable ufw will create the symlink
@@ -137,16 +140,18 @@ adobe-source-han-sans-kr-fonts
 adobe-source-han-serif-kr-fonts
 and many more
 
-[15]
+[22]
 backup your system manually or using backup program(s)
 
-[16] 
+[25] 
 \# install tlp, and then systemctl enable tlp --now (if tlp's version is 1.2.2 or lower, tlp needs tlp-sleep.service also.)
 
 \# (sudo) vim /etc/systemd/sleep.conf
 AllowHibernation=no
 AllowSuspendThenHibernate=no
 
-[18]
-Workspace Behavior -> Activities -> Privacy: Keep history: "as you want"
+[26]
+# welcome messages example
+echo "Exercise!"
+
 
