@@ -65,7 +65,7 @@ instead of ~/.Xmodmap
 
 appendix 2. tldr, fortune would help a lot.
 
-appendix 3. If you are going to use Joplin(open-source note-taking app): ./Joplin.AppImage --appimage-extract -> replace the included chrome-sandbox with a symlink to computer's chrome-sandbox(/usr/lib/chromium/chrome-sandbox) -> download appimagetool and repack Joplin by ARCH=x86_64 ./appimagetool-x86_64.AppImage ~/directory
+appendix 3. If you are going to use Joplin(open-source note-taking app): ./Joplin.AppImage --appimage-extract -> replace the included chrome-sandbox with a symlink to computer's chrome-sandbox(/usr/lib/chromium/chrome-sandbox) -> download appimagetool and chmod u+x -> repack Joplin by ARCH=x86_64 ./appimagetool-x86_64.AppImage to-repack-dir ~/.joplin/Joplin.AppImage
 
 appendix 4. customize clipboard example: right-click clipboard -> configure clipboard -> uncheck Save clipboard contents on exit, check Prevent empty clipboard/Ignore images/Ignore selection and change Clipboard history size to 5.
 
