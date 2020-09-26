@@ -69,6 +69,25 @@ appendix 3. If you are going to use Joplin(open-source note-taking app): ./Jopli
 
 appendix 4. customize clipboard example: right-click clipboard -> configure clipboard -> uncheck Save clipboard contents on exit, check Prevent empty clipboard/Ignore images/Ignore selection and change Clipboard history size to 5.
 
+appendix 5. Pain-in-the-ass problem: Dual-booting scheme is highly likely to be screwed up if you reinstall Windows 10 for some reason. GRUB will disappear! 
+Cause: Windows 10 formatted the EFI partition, and thus, its UUID has changed. 
+Solution: Step 1(not sure is this a must): make a Debian installation(NetInst version is fine) medium on a USB -> boot with the USB -> Graphical Rescue Mode -> select your system's root -> open a shell terminal ->
+sudo mount /dev/sd[root] /mnt
+sudo mount /dev/sd[efi] /mnt/boot/efi
+for i in /dev /dev/pts /proc /sys /run; do sudo mount --bind $i /mnt$i; done
+sudo chroot /mnt
+grub-install /dev/sd[efi]
+update-grub
+Step 2(it's a MUST): update the UUID of the EFI partition. After step 1, you can boot Debian, but [DEPEND] Dependency failed for /boot/efi error will show up. And then there will be a tty for you. Right there, you should do the followings:
+# blkid stands for block identification
+sudo blkid
+Jot down the UUID of the EFI partition
+# fstab stands for file systems table
+sudo nano /etc/fstab
+-> update the very UUID
+Hopefully, it will work again.
+
+
 [3] 
 \# Manual Partitioning Example
 EFI, swap, root, home
