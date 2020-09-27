@@ -116,8 +116,8 @@ privacy.firstparty.isolate -> true
 media.peerconnection.enabled -> false
 
 \# plugins
-uBlock Origin
-HTTPS Everywhere
+uBlock Origin -> *$font,third-party
+HTTPS Everywhere -> on
 Cookie Autodelete
 Decentraleyes
 ...
@@ -172,5 +172,6 @@ AllowSuspendThenHibernate=no
 [26]
 # welcome messages example
 echo "Exercise!"
+
 
 
