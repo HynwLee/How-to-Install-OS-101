@@ -169,8 +169,8 @@ AllowHibernation=no
 AllowSuspendThenHibernate=no
 
 [26]
-# welcome messages example
-echo "Exercise!"
+\# welcome messages example
+echo "Exercise/Stretch/Blink/..." for your health
 
 
 
