@@ -24,7 +24,7 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 13. (g)ufw: make sure (g)ufw auto-start on startup[13]
 14. install VLC
 15. time: Debian uses UTC, Windows uses RTC. Make Windows use UTC and hit the synchronize button of Windows. 
-16. Firefox settings: (for privacy and security, search on the internet! refer to privacytools.io) restore your bookmarks [16]
+16. Firefox settings: restore your bookmarks [16]
 17. Libreoffice writer: set your preferences(+ disable autocorrect-word completion and delete all the history for potential privacy threat)
 18. set uim for multilanguage input support. uim byeoru works well for Korean input. And install fonts.[18]
 19. keyboard shortcuts: remove the unnecessary 
@@ -79,10 +79,10 @@ sudo chroot /mnt
 grub-install /dev/sd[efi]
 update-grub
 Step 2(it's a MUST): update the UUID of the EFI partition. After step 1, you can boot Debian, but [DEPEND] Dependency failed for /boot/efi error will show up. And then there will be a tty for you. Right there, you should do the followings:
-# blkid stands for block identification
+\# blkid stands for block identification
 sudo blkid
 Jot down the UUID of the EFI partition
-# fstab stands for file systems table
+\# fstab stands for file systems table
 sudo nano /etc/fstab
 -> update the very UUID
 Hopefully, it will work again.
@@ -118,11 +118,10 @@ media.peerconnection.enabled -> false
 \# plugins
 uBlock Origin -> *$font,third-party
 HTTPS Everywhere -> on
-Cookie Autodelete
 Decentraleyes
 ...
 
-Search on the Internet!
+cf. privacytools 
 
 [18]
 for Hangul(Korean) input:
