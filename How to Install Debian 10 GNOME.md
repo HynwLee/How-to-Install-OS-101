@@ -87,6 +87,7 @@ sudo nano /etc/fstab
 -> update the very UUID
 Hopefully, it will work again.
 
+appendix 6. Sometimes, headphones do not work (maybe due to kernel issues). In that case, try (sudo) alsactl init. It might work well again.
 
 [3] 
 \# Manual Partitioning Example
