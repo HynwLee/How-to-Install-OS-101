@@ -66,8 +66,20 @@ instead of ~/.Xmodmap
 
 appendix 2. tldr, fortune would help a lot.
 
-appendix 3. chrome-sandbox issue(Electron): If you are going to use Joplin(open-source note-taking app): ./Joplin.AppImage --appimage-extract -> replace the included chrome-sandbox with a symlink to computer's chrome-sandbox(/usr/lib/chromium/chrome-sandbox) -> download appimagetool and chmod u+x -> repack Joplin by ARCH=x86_64 ./appimagetool-x86_64.AppImage to-repack-dir ~/.joplin/Joplin.AppImage
-This is necessary because of Electron, which is used by Joplin. 
+appendix 3. chrome-sandbox issue(Electron): 
+If you are going to use Joplin(open-source note-taking app): ./Joplin.AppImage --appimage-extract -> replace the included chrome-sandbox with a symlink to computer's chrome-sandbox(/usr/lib/chromium/chrome-sandbox) -> download appimagetool and chmod u+x -> repack Joplin by ARCH=x86_64 ./appimagetool-x86_64.AppImage to-repack-dir ~/.joplin/Joplin.AppImage
+If the icon for an AppImage does not show up on the GNOME task bar, then one solution can be making an icon, which executes the execution command on a terminal.
+\[procedure]: 
+1) vim ~/.local/share/applications/{appname}.desktop
+2) write something like this:
+\[Desktop Entry]
+Name={appname} Execution
+Icon=~/.local/share/icons/{appname}
+Exec=bash -c '~/.bitwarden/{appname}.AppImage'
+Terminal=false
+Type=Application
+3) move the wanted Icon file with this command: ~/.local/share/icons/{appname}
+This is necessary because of Electron, which is used by Joplin and so on. 
 
 appendix 4. customize clipboard example: right-click clipboard -> configure clipboard -> uncheck Save clipboard contents on exit, check Prevent empty clipboard/Ignore images/Ignore selection and change Clipboard history size to 5.
 
