@@ -49,8 +49,9 @@ WantedBy=multi-user.target
 28. add terminal shortcut: Settings -> Devices -> Keyboard -> Command gnome-terminal, Shortcut Ctrl + Alt + T (e.g.)
 29. 3rd-party programs: use programs in the official repository as much as possible, and if you can't avoid it, then at least isolate in your home directory. For stability, use programs in the official repositories. If you need newer ones or missing ones that you can't get from there, consider: 1) Debian Backports 2) Flatpaks 3) AppImages 4) isolate 3rd-party programs in your home directory
 30. (Install 7-zip, veracrypt, ...) 
-31. Remove bloats: I mean, GNOME games.
-32. Initial Setup is Done. You can change settings whenever you want! For stability, search on the internet for the latest information.
+31. (Install a password manager)
+32. Remove bloats: I mean, GNOME games.
+33. Initial Setup is Done. You can change settings whenever you want! For stability, search on the internet for the latest information.
 
 appendix 1. how to use different keybind: 
 a) xmodmap -pke > ~/.Xmodmap b) edit ~/.Xmodmap(use xev to figure out the keycodes) c) check ~/.xinitrc to ensure that X11 starts with the changed .Xmodmap(cf. usermodmap, sysmodmap, if [ -f "$usermodmap" ]; then xmodmap "$usermodmap" fi) 
@@ -65,7 +66,8 @@ instead of ~/.Xmodmap
 
 appendix 2. tldr, fortune would help a lot.
 
-appendix 3. If you are going to use Joplin(open-source note-taking app): ./Joplin.AppImage --appimage-extract -> replace the included chrome-sandbox with a symlink to computer's chrome-sandbox(/usr/lib/chromium/chrome-sandbox) -> download appimagetool and chmod u+x -> repack Joplin by ARCH=x86_64 ./appimagetool-x86_64.AppImage to-repack-dir ~/.joplin/Joplin.AppImage
+appendix 3. chrome-sandbox issue(Electron): If you are going to use Joplin(open-source note-taking app): ./Joplin.AppImage --appimage-extract -> replace the included chrome-sandbox with a symlink to computer's chrome-sandbox(/usr/lib/chromium/chrome-sandbox) -> download appimagetool and chmod u+x -> repack Joplin by ARCH=x86_64 ./appimagetool-x86_64.AppImage to-repack-dir ~/.joplin/Joplin.AppImage
+This is necessary because of Electron, which is used by Joplin. 
 
 appendix 4. customize clipboard example: right-click clipboard -> configure clipboard -> uncheck Save clipboard contents on exit, check Prevent empty clipboard/Ignore images/Ignore selection and change Clipboard history size to 5.
 
