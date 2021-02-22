@@ -75,7 +75,7 @@ If the icon for an AppImage does not show up on the GNOME task bar, then one sol
 \[Desktop Entry]
 Name={appname} Execution
 Icon=\~/.local/share/icons/{appname}
-Exec=bash -c '~/.bitwarden/{appname}.AppImage'
+Exec=bash -c '~/.{appname}/{appname}.AppImage'
 Terminal=false
 Type=Application
 3) move the wanted Icon file with this command: ~/.local/share/icons/{appname}
