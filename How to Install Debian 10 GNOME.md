@@ -74,7 +74,7 @@ If the icon for an AppImage does not show up on the GNOME task bar, then one sol
 2) write something like this:
 \[Desktop Entry]
 Name={appname} Execution
-Icon=\~/.local/share/icons/{appname}
+Icon=\~/.local/share/icons/(hicolor/512x512/apps/){appname}
 Exec=bash -c '~/.{appname}/{appname}.AppImage'
 Terminal=false
 Type=Application
