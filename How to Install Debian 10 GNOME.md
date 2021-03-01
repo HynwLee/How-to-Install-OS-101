@@ -25,17 +25,29 @@ Before: backup important files, Firefox bookmarks(library->bookmarks->show all b
 14. install VLC
 15. time: Debian uses UTC, Windows uses RTC. Make Windows use UTC and hit the synchronize button of Windows. 
 16. Firefox settings: restore your bookmarks [16]
-17. Libreoffice writer: set your preferences(+ disable autocorrect-word completion and delete all the history for potential privacy threat)
-18. set uim for multilanguage input support. uim byeoru works well for Korean input. And install fonts.[18]
-19. keyboard shortcuts: remove the unnecessary 
-20. vim settings: customize .vimrc and use great plugins!
-21. Encrypted DNS Settings 
-22. Restore files from your backup storage[22]
-23. battery: laptop lid/power button actions/screen light-out/suspend: sleep, shutdown, disable hibernation[23]
-24. brightness & night light(5000K~6000K might be your sweet spot): 00:00 to 23:59 for always -> dconf-editor -> /org/gnome/settings-daemon/plugins/color/night-light-temperature -> change Custom value
-25. Go through your GNOME system settings[25]
-26. Install fd, rg and add alias fd=fdfind in .bashrc file, add welcoming messages[26]
-27. To disable bluetooth on startup, install rfkill -> create /lib/systemd/system/disablebluetooth.service -> 
+17. Currently, r8169 module(ethernet) doesn't work after suspend. Therefore, make this file in /lib/systemd/system-sleep: 
+
+#!/bin/bash
+
+state=$1
+action=$2
+
+if [[ $state == post ]]; then
+	modprobe -r r8169
+	$$ modprobe r8169
+fi
+  
+18. Libreoffice writer: set your preferences(+ disable autocorrect-word completion and delete all the history for potential privacy threat)
+19. set uim for multilanguage input support. uim byeoru works well for Korean input. And install fonts.[18]
+20. keyboard shortcuts: remove the unnecessary 
+21. vim settings: customize .vimrc and use great plugins!
+22. Encrypted DNS Settings 
+23. Restore files from your backup storage[22]
+24. battery: laptop lid/power button actions/screen light-out/suspend: sleep, shutdown, disable hibernation[23]
+25. brightness & night light(5000K~6000K might be your sweet spot): 00:00 to 23:59 for always -> dconf-editor -> /org/gnome/settings-daemon/plugins/color/night-light-temperature -> change Custom value
+26. Go through your GNOME system settings[25]
+27. Install fd, rg and add alias fd=fdfind in .bashrc file, add welcoming messages[26]
+28. To disable bluetooth on startup, install rfkill -> create /lib/systemd/system/disablebluetooth.service -> 
 [Unit]
 Description=Disable Bluetooth
 
