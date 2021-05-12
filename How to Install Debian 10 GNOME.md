@@ -62,8 +62,8 @@ WantedBy=multi-user.target
 29. 3rd-party programs: use programs in the official repository as much as possible, and if you can't avoid it, then at least isolate in your home directory. For stability, use programs in the official repositories. If you need newer ones or missing ones that you can't get from there, consider: 1) Debian Backports 2) Flatpaks 3) AppImages 4) isolate 3rd-party programs in your home directory
 30. (Install 7-zip, veracrypt, ...) 
 31. (Install a password manager)
-32. Remove bloats: I mean, GNOME games.
-33. Initial Setup is Done. You can change settings whenever you want! For stability, search on the internet for the latest information.
+32. (Install fish, atelier-dune theme)[cf. 'config' directory]
+33. Remove bloats: I mean, GNOME games.
 
 appendix 1. how to use different keybind: 
 a) xmodmap -pke > ~/.Xmodmap b) edit ~/.Xmodmap(use xev to figure out the keycodes) c) check ~/.xinitrc to ensure that X11 starts with the changed .Xmodmap(cf. usermodmap, sysmodmap, if [ -f "$usermodmap" ]; then xmodmap "$usermodmap" fi) 
@@ -199,5 +199,7 @@ AllowSuspendThenHibernate=no
 \# welcome messages example
 echo "Exercise/Stretch/Blink/..." for your health
 
-
+[27]
+install fish from the repository and then chsh -s /usr/bin/fish
+Atelier Dune: cf. config file
 
